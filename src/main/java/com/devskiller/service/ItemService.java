@@ -13,7 +13,7 @@ public class ItemService {
     }
 
     public List<String> getTitlesWithAverageRatingLowerThan(Double rating) {
-        //TODO
+        i
         return null;
     }
 
