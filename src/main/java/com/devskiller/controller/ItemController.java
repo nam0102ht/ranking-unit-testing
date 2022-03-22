@@ -1,14 +1,21 @@
 package com.devskiller.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import com.devskiller.service.ItemService;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
 public class ItemController {
+    private final ItemService itemService;
 
-    public List<String> getTitles(Double rating) {
-        //TODO
-        return null;
+    public ItemController(ItemService itemService) {
+        this.itemService = itemService;
+    }
+
+    @GetMapping(value = "/titles")
+    @ResponseBody
+    public List<String> getTitles(@RequestParam("rating") Double rating) {
+        return itemService.getTitlesWithAverageRatingLowerThan(rating);
     }
 }
