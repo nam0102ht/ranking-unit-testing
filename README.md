@@ -12,3 +12,12 @@ If there are no reviews for an item, then its rating should be zero. Your implem
 - `ItemService` `List<String> getTitles(Double rating)` - the method should retrieve data using the `ItemRepository` and return only the titles of the items.
 
 - `ItemController` `List<String> getTitles(Double rating)` - the method should provide a REST endpoint (GET method) under the '/titles' path and return titles from the `ItemService` in JSON format with UTF8 encoding.
+
+## How to verify that code:
+Trying running this command in command line:
+
+ `./mvnw clean test`
+ 
+ <img width="679" alt="Screen Shot 2022-03-22 at 11 58 53" src="https://user-images.githubusercontent.com/27972699/159411145-20d9ed05-dbc6-4721-af92-5fafd77de234.png">
+ 
+ if this test do it well, it will resolve this log.
